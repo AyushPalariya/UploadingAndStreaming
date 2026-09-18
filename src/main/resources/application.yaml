@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: VideoManage
+
+  # MySQL Database
+  datasource:
+    url: jdbc:mysql://localhost:3306/video_management
+    username: root
+    password: Ayush@2003
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA / Hibernate
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLDialect
+      ddl-auto: update
+    show-sql: true
+
+  # Multipart configuration
+  servlet:
+    multipart:
+      max-file-size: 8GB
+      max-request-size: 8GB
+
+  # Spring Batch
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+
+
+# Video upload temporary folder
+video:
+  upload:
+    temp-path: E:\Videos\temp       #this is for chunks
+    final-path: E:\Videos        #this is for storing videos
+    hls-path: E:\Videos\HLS
+    ffmpeg:
+      path: "C:\\ffmpeg\\ffmpeg-2026-09-17-git-7070fe638e-full_build\\bin\\ffmpeg.exe"
+
