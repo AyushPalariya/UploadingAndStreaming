@@ -1,0 +1,13 @@
+// UploadController
+@GetMapping("/{uploadId}")
+public ResponseEntity<VideoUploadEntity> getUploadStatus(
+        @PathVariable String uploadId) {
+    VideoUploadEntity video = uploadService.getStatus(uploadId);
+    return ResponseEntity.ok(video);
+}
+
+// UploadService
+public VideoUploadEntity getStatus(String uploadId) {
+    return videoRepository.findByUploadId(uploadId)
+            .orElseThrow(() -> new RuntimeException("Upload not found"));
+}

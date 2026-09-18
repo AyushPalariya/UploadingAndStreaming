@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Video Manager</h1>
+    <p>Upload multiple videos concurrently and stream completed HLS videos.</p>
+  </header>
+
+  <section class="upload-card">
+    <input id="videoFiles" type="file" accept="video/*" multiple>
+    <button id="uploadBtn">Upload Videos</button>
+
+    <div id="selectionInfo" class="file-info"></div>
+
+    <h2>Upload Queue</h2>
+    <div id="uploadQueue" class="queue">
+      <p class="empty">No videos selected.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Uploaded Videos</h2>
+    <div id="videoList" class="video-list">
+      <p class="empty">No completed videos yet.</p>
+    </div>
+  </section>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
